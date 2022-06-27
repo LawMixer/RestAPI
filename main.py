@@ -15,9 +15,16 @@ robloxId = req2.json()["robloxId"]
 
 # https://lk.policelaw14.repl.co/users/247036279420747776
 # api.lawmixerscpf.tk/users/{discordId}
-@app.route(f"/users/{discordId}")
+@app.route(f"/users/{discordId}", methods=["GET"])
 def get_roblox_info():
-  return jsonify(f"money: {money}, robloxUsername: {robloxUsername}, robloxId: {robloxId}")
-
+  return {
+  "money": {money},
+  "robloxUsername": {robloxUsername},
+  "robloxId": {robloxId},
+  "applications": {
+    "type": "Level 1",
+    "result": "pending" 
+  }
+}
 
 app.run(host='0.0.0.0', port=8080)
