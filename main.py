@@ -1,9 +1,10 @@
 from flask import Flask
 from flask import jsonify
 import requests
+
 app = Flask('app')
 
-discordId = input("Discord Id:")
+discordId = 247036279420747776
 money = 100
 
 req1 = requests.get(f"https://verify.eryn.io/api/user/{discordId}")
